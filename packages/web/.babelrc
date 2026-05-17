@@ -3,7 +3,10 @@
     [
       "@babel/preset-env",
       {
-        "useBuiltIns": "usage",
+        "targets": {
+          "browsers": ["Chrome 91", "Firefox 89", "Safari 14", "Edge 91"]
+        },
+        "useBuiltIns": "entry",
         "corejs": 3,
         "loose": true,
         "modules": false
@@ -13,6 +16,14 @@
   "plugins": [
     "@babel/plugin-proposal-object-rest-spread",
     "@babel/plugin-transform-runtime",
-    "@babel/plugin-transform-template-literals"
+    "@babel/plugin-transform-template-literals",
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    "@babel/plugin-proposal-optional-chaining",
+    "@babel/plugin-proposal-nullish-coalescing-operator"
   ]
 }
